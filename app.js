@@ -45,9 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 /**
  * -------------- ROUTES ----------------
  */
-app.get('/', (req,res) => {
-	res.send("Server is Connected");
-})
+
 require("./routes/auth.route")(app);
 require("./routes/post.route")(app);
 require("./routes/user.route")(app);
@@ -63,7 +61,7 @@ const PORT = process.env.PORT || 3000;
 app.disable("x-powered-by");
 
 app.listen(PORT, () => {
-	console.log(`Server is running in ${process.env.NODE_ENV} mode, under port ${PORT}.`);
+	console.log(`Server is running under port ${PORT}.`);
 });
 
 
